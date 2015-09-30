@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Marvel or DC?</title>
+
+		<!-- Meta Tags -->
+		<meta charset="utf-8" />
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+
+		<!-- Javascript -->
+		<script type="text/Javascript" scr="app.js/js"></script>
+	 	<script type="text/Javascript" scr="bootstrap.min.js"></script>
+	</head>
+	<body>
+		<section class="header">
+			<h1><font color="#ED1A29">Marvel</font> or <font color="#0E68A8">DC</font>?</h1>
+
+		</section>
+		
+		<section id="question">
+			<div id="questionCard">
+				<img src="css/img/superman.jpg">
+				<p>Superman</p>
+			</div>
+
+			<div id="selectAnswer">
+				<form>
+  					<input type="radio" name="comics" value="marvel" checked>
+  					<label for="marvel">Marvel</label>
+  					<input type="radio" name="comic" value="dc">
+  					<label for="DC">DC</label>
+				</form>
+			</div>
+
+			<div id="status">
+				<div id="statusBar">
+					<div class="questionFiller" tabindex="0">
+					</div>
+					<div class="questionFiller" tabindex="0">
+					</div>
+					<div class="questionFiller" tabindex="0">
+					</div>
+					<div class="questionFiller" tabindex="0">
+					</div>
+					<div class="questionFiller" tabindex="0">
+					</div>
+					<div class="questionFiller" tabindex="0">
+					</div>
+					
+				</div>
+
+				<div class="questionCounter">1/6
+				</div>
+
+			</div>
+
+		</section>
+
+		<section id="results">
+			<div id="Marvel">
+				<div class="answer">
+					<img src="css/img/hulk.jpg">
+					<p class="answerName">Hulk</p>
+					<div class="validated">	
+						<img class="validatedIcon no">
+					</div>
+				</div>	
+			</div>
+
+			<div id="DC">
+				<div class="answer">
+					<img src="css/img/superman.jpg">
+					<p class="answerName">Superman</p>
+					<div class="validated">	
+						<img class="validatedIcon yes">
+					</div>
+				</div>	
+			</div>
+
+		</section>
+
+		<section class="footer">
+
+			<div id="counter">
+			<span id="counterNumber">0/0</span>
+			<span id="counterLabel">correct</span>
+			</div>
+
+			<div id="credits">
+			<p>The images are from</p>
+			<a href="http://www.dccomics.com/characters">DC Comics</a>
+			<p>and</p>
+			<a href="http://marvel.com/characters">Marvel</a> 
+			</div>
+
+		</section>
+
+	</body>
+</html>
