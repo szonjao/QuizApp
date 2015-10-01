@@ -5,6 +5,7 @@ body {
 	font-family: "Anonymous Pro", sans-serif;
 	color: white;
 	text-align: center;
+	padding-bottom: 10em;
 }
 
 p {
@@ -161,10 +162,20 @@ form {
 	margin: auto;
 }
 
-.footer {
-	position: absolute;
-	width: 100%;
-}
+div#wrapper {
+       width: 100%;
+       min-height: 100%;
+       height: 100%;
+       position: relative;
+       margin: 0px 0px -1.5em 0px;
+       overflow: scroll;
+ }
+ 
+
+div#footer_wrapper {
+       width: 100%;
+       height: 1.5em;
+ }
 
 #credits {
 	background-color: #C0C0C0;
