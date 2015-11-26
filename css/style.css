@@ -13,12 +13,13 @@ body {
 
 #content_wrapper {
 	min-height: 100%;
-	margin-bottom: -5.4em;
+	margin-bottom: -1.5em;
+	overflow: hidden;
 } 
 
 #footer_wrapper {
        width: 100%;
-       height: 5.4em;
+       height: 1.5em;
  }
 
 #content_wrapper:after {
@@ -58,7 +59,7 @@ img.yes {
 	content: url('img/checkmark.svg');
 }
 img.no {
-	margin-top: 0.3em;
+	margin-right: 1em;
 	content: url('img/no.png');
 }
 
@@ -112,6 +113,10 @@ form {
 
 #status {
 	max-width: 60%;
+	display: inline-block;
+}
+
+#statusLine {
 	display: inline-flex;
 }
 
@@ -119,8 +124,6 @@ form {
 	padding-right: 0.3em;
 	
 }
-
-
 
 .questionFiller {
 	border: 0.2em solid black;
@@ -141,25 +144,29 @@ form {
 
 #results {
 	padding-top: 2em;
+	margin-bottom: 2em;
 }
 
 .group {
-	display: flex;
-	margin-left: 8%;
+	display: inline-block;
 	min-width: 40%;
+	min-height: 8em;
+	max-width: 8em;
+	margin-left: 6%;
 }
 
 #Marvel {
 	background-color: #FBD1D4;
 	float: left;
 	border: 2px solid #ED1A29;
-	margin-right: 2%;
+	
 }
 
 #DC {
 	background-color: #CFE1EE;
 	margin-right: 8%;
 	border: 2px solid #0E68A8;
+	
 }
 
 .answer {
@@ -195,7 +202,11 @@ form {
 	max-width: 5em;
 	border: 2px solid black;
 	background-color: #C0C0C0;
-	margin: auto;
+	margin: 0 auto;
 } 
 
+/*input[id="restartbutton"] {
+	min-height: 3em;
+	min-width: 5em;
+}*/
                                                                               

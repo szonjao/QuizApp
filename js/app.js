@@ -181,7 +181,6 @@ function checkAnswer() {
 		showQuestion(questionItems[questionCount]);
 	}
 	else {
-		alert("DONE");
 		endQuiz();
 	}
 
