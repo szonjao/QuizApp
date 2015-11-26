@@ -130,7 +130,7 @@ form {
 	pointer-events: none;
 }
 
-.questionFiller:focus {
+.questionFillerFilled {
 	background-color: black;
 	outline: none;
 }
@@ -143,20 +143,21 @@ form {
 	padding-top: 2em;
 }
 
+.group {
+	display: flex;
+	margin-left: 8%;
+	min-width: 40%;
+}
+
 #Marvel {
 	background-color: #FBD1D4;
-	min-width: 40%;
-	display: flex;
 	float: left;
-	margin-left: 8%;
 	border: 2px solid #ED1A29;
 	margin-right: 2%;
 }
 
 #DC {
 	background-color: #CFE1EE;
-	min-width: 40%;
-	display: flex;
 	margin-right: 8%;
 	border: 2px solid #0E68A8;
 }

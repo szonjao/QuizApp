@@ -12,7 +12,7 @@
 };*/
 
 
-
+/*
 function questionController(questions) {
 	var currentQuestion = {
 		number: -1,
@@ -69,6 +69,7 @@ function questionController(questions) {
 		display(startIndex);
 	}
 }
+*/
 
 var questionCount = 0;
 
@@ -86,21 +87,27 @@ questionItems[1] = new QuestionItem(
 	'Marvel',
 	'');
 
+questionItems[2] = new QuestionItem(
+	'Avengers',
+	'css/img/avengers.jpg',
+	'Marvel',
+	'');
+
 questionItems[3] = new QuestionItem(
-	'Superman',
-	'css/img/superman.jpg',
+	'Batman',
+	'css/img/batman.jpg',
 	'DC',
 	'');
 
 questionItems[4] = new QuestionItem(
-	'Superman',
-	'css/img/superman.jpg',
-	'DC',
+	'Spiderman',
+	'css/img/spiderman.jpg',
+	'Marvel',
 	'');
 
 questionItems[5] = new QuestionItem(
-	'Superman',
-	'css/img/superman.jpg',
+	'Man of Steel',
+	'css/img/manofsteel.jpg',
 	'DC',
 	'');
 
@@ -111,10 +118,27 @@ function QuestionItem(name, image, group, answer) {
 	this.answer = answer;
 }
 function startQuiz() {
+	$("#qc").text("0/" + questionItems.length);
+	$("#counterNumber").text("0/0");
+	for (var i = 0; i<questionItems.length; i++) {
+		$("#qf" + i).removeClass("questionFillerFilled");	
+	}
+	$("#DC").children().remove();
+	$("#Marvel").children().remove();
+	$("#restart").hide();
+	$("#question").show();
+	questionCount = 0;
 	console.log(questionItems[questionCount]);
+	showQuestion(questionItems[questionCount]);
+}
+
+function endQuiz() {
+	$("#question").hide();
+	$("#restart").show();
 }
 
 function showQuestion(currentQuestion) {
+
 	$("#radio_dc").prop('checked', false);
 	$("#radio_marvel").prop('checked', false);
 
@@ -122,24 +146,55 @@ function showQuestion(currentQuestion) {
 	$("#questionImage").attr("src", currentQuestion.image);
 }
 
+function correctAnswer(item) {
+	$("#"+item.group).append('<div class="answer"><img src="'+ item.image + '"><p class="answerName">' + item.name + '</p><div class="validated"><img class="validatedIcon yes"></div></div>');
+}
+
+function incorrectAnswer(item) {
+	$("#"+item.group).append('<div class="answer"><img src="'+ item.image + '"><p class="answerName">' + item.name + '</p><div class="validated"><img class="validatedIcon no"></div></div>');
+}
+
+function updateStats() {
+	var good = 0;
+	for (var i = 0; i<questionCount; i++) {
+		if (questionItems[i].group == questionItems[i].answer) {
+			good++;
+		}
+	} 
+	$("#counterNumber").text(good + "/" + questionCount);
+}
+
 function checkAnswer() {
 	if (questionItems[questionCount].group == questionItems[questionCount].answer) {
-		alert("correct");
+		correctAnswer(questionItems[questionCount]);
 	}
 	else {
-		alert("incorrect");
+		incorrectAnswer(questionItems[questionCount]);
 	}
 
-	
-	questionCount++;
-	showQuestion(questionItems[questionCount]);
+	$("#qf" + questionCount).addClass("questionFillerFilled");
+	$("#qc").text((questionCount+1) + "/" + questionItems.length);
+
+	questionCount++;	
+
+	if (questionCount < questionItems.length) {
+		showQuestion(questionItems[questionCount]);
+	}
+	else {
+		alert("DONE");
+		endQuiz();
+	}
+
+	updateStats();
 
 }
 
 $(document).ready(function() {
+
+	for (var i = 0; i<questionItems.length; i++) {
+		$("#statusBar").append('<div id="qf' + i + '" class="questionFiller" tabindex="0"></div>');
+	};
 	startQuiz();
-	showQuestion(questionItems[0]);
-	
 
 
 	$('#radio_marvel').click(function() {
@@ -153,6 +208,9 @@ $(document).ready(function() {
 		checkAnswer();
 	});
 
+	$('#restartbutton').click(function(){
+		startQuiz();
+	});
 });
 
 
