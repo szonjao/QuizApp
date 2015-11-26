@@ -11,8 +11,10 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 
 		<!-- Javascript -->
-		<script type="text/Javascript" scr="app.js/js"></script>
-	 	<script type="text/Javascript" scr="bootstrap.min.js"></script>
+	 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+		<script type="text/javascript" src="js/app.js"></script>
+	 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	</head>
 	<body>
 	<div id="content_wrapper">
@@ -23,15 +25,15 @@
 		
 		<section id="question">
 				<div id="questionCard">
-					<img src="css/img/superman.jpg">
-					<p>Superman</p>
+					<img id="questionImage">
+					<p id="questionName">blabla</p>
 				</div>
 
 				<div id="selectAnswer">
-					<form>
-	  					<input type="radio" name="comics" value="marvel" checked>
+					<form id="radioForm">
+	  					<input type="radio" name="comics" value="marvel" class="radio_button" id="radio_marvel">
 	  					<label for="marvel">Marvel</label>
-	  					<input type="radio" name="comic" value="dc">
+	  					<input type="radio" name="comics" value="dc" class="radio_button" id="radio_dc">
 	  					<label for="DC">DC</label>
 					</form>
 				</div>
